@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="186" height="47" viewBox="0 0 186 47">
+  <defs>
+    <filter id="Rectangle_41" x="0" y="0" width="186" height="47" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#8d8181" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="statsmall" transform="translate(9 6)">
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Rectangle_41)">
+      <g id="Rectangle_41-2" data-name="Rectangle 41" transform="translate(9 6)" fill="#fff" stroke="#e86966" stroke-width="1">
+        <rect width="168" height="29" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="167" height="28" rx="2.5" fill="none"/>
+      </g>
+    </g>
+    <path id="Rectangle_42" data-name="Rectangle 42" d="M4,0H90a0,0,0,0,1,0,0V29a0,0,0,0,1,0,0H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0Z" fill="#e76a66"/>
+    <text id="_230pts" data-name="230pts" transform="translate(17 18)" fill="#fff" font-size="14" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">230pts</tspan></text>
+    <text id="_500" data-name="/500" transform="translate(129 19)" fill="#929191" font-size="14" font-family="OpenSans-Regular, Open Sans" opacity="0.63"><tspan x="0" y="0">/500</tspan></text>
+  </g>
+</svg>

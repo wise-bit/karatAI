@@ -5,6 +5,10 @@ body {
   padding: 0;
 }
 
+.pattern {
+  background-image: url("icons/pattern.png");
+}
+
 .homecontainer {
   display: -ms-grid;
   display: grid;
@@ -52,6 +56,7 @@ h1 {
   font-weight: 700;
   margin-top: 10px;
   margin-bottom: 0;
+  line-height: 1.5em;
 }
 
 h2 {
@@ -101,8 +106,14 @@ a {
 }
 
 strong {
-  font-weight: 400;
+  font-weight: 800;
   color: #EA6765;
+}
+
+.score {
+  font-size: 58px;
+  color: #EA6765;
+  font-weight: 700;
 }
 
 .box {
@@ -111,6 +122,7 @@ strong {
   padding: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
+  background-color: white;
 }
 
 .box_small {
@@ -120,6 +132,21 @@ strong {
   padding: 30px;
   margin-top: 30px;
   float: right;
+}
+
+.box_notify {
+  -webkit-box-shadow: 0px 3px 6px rgba(129, 129, 129, 0.16);
+          box-shadow: 0px 3px 6px rgba(129, 129, 129, 0.16);
+  padding: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: white;
+  text-align: center;
+  margin-top: 30%;
+}
+
+.box_notify h1 {
+  margin-top: -10px;
 }
 
 .box a {
@@ -160,13 +187,6 @@ strong {
           justify-content: center;
 }
 
-.play:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-}
-
 .play_small {
   height: 55px;
   width: 55px;
@@ -183,7 +203,7 @@ strong {
           justify-content: center;
 }
 
-.play:hover {
+.play:hover, .play_small:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: all 0.25s ease-in-out;
@@ -228,6 +248,183 @@ strong {
 
 .testing {
   text-align: center;
+}
+
+.button_holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.button_holder a {
+  text-decoration: none;
+  width: 40%;
+}
+
+.mainbutton, .secondarybutton {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 800;
+  color: white;
+  padding: 20px 0 20px 0;
+  border-radius: 3%;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.mainbutton {
+  background-color: #EA6765;
+}
+
+.secondarybutton {
+  background-color: #212121;
+}
+
+.mainbutton:hover, .secondarybutton:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.loading_con {
+  display: -ms-grid;
+  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loading {
+  background-color: #EA6765;
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100%;
+  margin-top: 30%;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis1 0.6s infinite;
+          animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  -webkit-animation: lds-ellipsis3 0.6s infinite;
+          animation: lds-ellipsis3 0.6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
+  }
 }
 
 footer {
@@ -317,6 +514,7 @@ nav {
   margin: auto;
   margin-bottom: 10px;
 }
+
 .recordbutton:active {
   border: 3px solid #BF2F2F;
 }

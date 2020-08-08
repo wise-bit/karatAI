@@ -317,6 +317,9 @@ nav {
   margin: auto;
   margin-bottom: 10px;
 }
+.recordbutton:active {
+  border: 3px solid #BF2F2F;
+}
 
 @media only screen and (max-width: 1400px) {
   .homecontainer {

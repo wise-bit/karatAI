@@ -1,8 +1,23 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  background-color:white;
+  padding: 1em;
 }
 
-a {
-  color: #00B7FF;
+
+
+/* Grid css */
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
+
+
+
+
+
+

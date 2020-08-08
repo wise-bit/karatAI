@@ -12,9 +12,12 @@
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
     "@types/cookie-parser": "^1.4.1",
+    "@types/createjs": "0.0.29",
+    "@types/easeljs": "^1.0.0",
     "@types/express": "^4.16.1",
     "@types/morgan": "^1.7.35",
-    "@types/node": "^10.12.19"
+    "@types/node": "^10.12.19",
+    "@types/tweenjs": "^1.0.1"
   },
   "engines": {
     "node": "^10.15.0",
@@ -33,8 +36,8 @@
     "jquery": "^3.5.1",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
+    "popper.js": "^1.14.7",
     "wow": "0.0.6",
-    "wowjs": "^1.1.3",
-    "popper.js": "^1.14.7"
+    "wowjs": "^1.1.3"
   }
 }

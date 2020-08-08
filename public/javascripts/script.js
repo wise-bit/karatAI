@@ -3,13 +3,17 @@
 
 import person from "./person.js";
 let stage;
+let stage2;
 
 (function () {
 
     console.log("initializing stage");
+
+
     stage = new createjs.Stage("myCanvas");
 
-    console.log("initializing person");
+
+
     let line = initPerson();
 
     /*
@@ -47,6 +51,7 @@ function addLinesToStage(line) {
 
     stage.addChild(line.one, line.two, line.three, line.four, line.five, line.six, line.seven, line.eight, line.nine, line.ten, line.eleven)
     stage.update();
+
 
 
 }

@@ -1,96 +1,73 @@
 
+
+
+function createLine(coordinate) {
+    let line = new createjs.Shape();
+    line.graphics.setStrokeStyle(1).beginStroke("#3FBF68");
+    console.log("called " + coordinate.moveToX);
+    // Tell EaselJS where to go to start drawing the line
+    line.graphics.moveTo(coordinate.moveToX, coordinate.moveToY);
+
+    // Tell EaselJS where to draw the line to
+    line.graphics.lineTo(coordinate.lineToX, coordinate.lineToY);
+    line.graphics.endStroke();
+
+
+    return line;
+
+}
+
 const person = {
+
     one() {
 
-        let line = new createjs.Shape();
-        line.graphics.setStrokeStyle(1).beginStroke("#3FBF68");
 
-        // Tell EaselJS where to go to start drawing the line
-        line.graphics.moveTo(100, 100);
 
-        // Tell EaselJS where to draw the line to
-        line.graphics.lineTo(150, 200);
+        return createLine({ moveToX: 100, moveToY: 100, lineToX: 150, lineToY: 200 })
 
-        line.graphics.endStroke();
-
-        return line;
     },
 
     two() {
 
-        let line = new createjs.Shape();
-        line.graphics.setStrokeStyle(1).beginStroke("#BFB43F");
 
-        // Tell EaselJS where to go to start drawing the line
-        line.graphics.moveTo(100, 100);
 
-        // Tell EaselJS where to draw the line to
-        line.graphics.lineTo(150, 200);
+        return createLine({ moveToX: 150, moveToY: 200, lineToX: 500, lineToY: 100 })
 
-        line.graphics.endStroke();
-
-        return line;
     },
 
 
     three() {
 
-        let line = new createjs.Shape();
-        line.graphics.setStrokeStyle(1).beginStroke("#BFB43F");
 
-        // Tell EaselJS where to go to start drawing the line
-        line.graphics.moveTo(100, 100);
+        return createLine({ moveToX: 500, moveToY: 100, lineToX: 500, lineToY: 450 })
 
-        // Tell EaselJS where to draw the line to
-        line.graphics.lineTo(150, 200);
-
-        line.graphics.endStroke();
-
-        return line;
     },
 
     four() {
 
         let line = new createjs.Shape();
-        line.graphics.setStrokeStyle(1).beginStroke("#BFB43F");
-
+        line.graphics.setStrokeStyle(1).beginStroke("#00000");
         // Tell EaselJS where to go to start drawing the line
-        line.graphics.moveTo(100, 100);
+        line.graphics.moveTo(500, 100);
 
         // Tell EaselJS where to draw the line to
-        line.graphics.lineTo(150, 200);
+        line.graphics.lineTo(850, 200);
 
         line.graphics.endStroke();
 
         return line;
     },
 
-    four() {
-
-        let line = new createjs.Shape();
-        line.graphics.setStrokeStyle(1).beginStroke("#BFB43F");
-
-        // Tell EaselJS where to go to start drawing the line
-        line.graphics.moveTo(100, 100);
-
-        // Tell EaselJS where to draw the line to
-        line.graphics.lineTo(150, 200);
-
-        line.graphics.endStroke();
-
-        return line;
-    },
 
     five() {
 
         let line = new createjs.Shape();
-        line.graphics.setStrokeStyle(1).beginStroke("#BFB43F");
-
+        line.graphics.setStrokeStyle(1).beginStroke("#00000");
         // Tell EaselJS where to go to start drawing the line
-        line.graphics.moveTo(100, 100);
+        line.graphics.moveTo(850, 200);
 
         // Tell EaselJS where to draw the line to
-        line.graphics.lineTo(150, 200);
+        line.graphics.lineTo(900, 100);
 
         line.graphics.endStroke();
 
@@ -177,6 +154,7 @@ const person = {
         return line;
     },
 
+
     eleven() {
 
         let line = new createjs.Shape();
@@ -189,9 +167,9 @@ const person = {
         line.graphics.lineTo(150, 200);
 
         line.graphics.endStroke();
-
         return line;
     },
+
 
 }
 

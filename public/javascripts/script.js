@@ -21,8 +21,7 @@ let stage;
 
     */
 
-    stage.addChild(line.one, line.two, line.three, li)
-    stage.update();
+    addLinesToStage(line);
 
 })();
 
@@ -33,18 +32,23 @@ function initPerson() {
         two: person.two(),
         three: person.three(),
         four: person.four(),
-        five: person.four(),
-        six: person.four(),
-        seven: person.four(),
-        eight: person.four(),
-        eight: person.four(),
-        eight: person.four(),
-        eight: person.four(),
-
-
-
+        five: person.five(),
+        six: person.six(),
+        seven: person.seven(),
+        eight: person.eight(),
+        nine: person.nine(),
+        ten: person.ten(),
+        eleven: person.eleven()
     }
     //init
+}
+
+function addLinesToStage(line) {
+
+    stage.addChild(line.one, line.two, line.three, line.four, line.five, line.six, line.seven, line.eight, line.nine, line.ten, line.eleven)
+    stage.update();
+
+
 }
 
 function tick(event) {

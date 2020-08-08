@@ -3,7 +3,6 @@
 
 import person from "./person.js";
 let stage;
-let stage2;
 
 (function () {
 
@@ -12,18 +11,13 @@ let stage2;
 
     stage = new createjs.Stage("myCanvas");
 
-
-
     let line = initPerson();
 
-    /*
-
-    createjs.Tween.get(line.one, { loop: true }).to({ x: 450 }, 3000).to({ x: 50 }, 3000)
+    createjs.Tween.get(line.one, { loop: true }).to({ x: line.one.x + 300 }, 3000).to({ x: 50 }, 3000)
+    createjs.Tween.get(line.two, { loop: true }).to({ x: line.two.x + 300 }, 3000).to({ x: 50 }, 3000)
 
     createjs.Ticker.addEventListener("tick", tick);
-        line.one.addEventListener("click", handleClick);
 
-    */
 
     addLinesToStage(line);
 

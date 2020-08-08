@@ -1,16 +1,21 @@
 <% include ./partials/constant/header.ejs %>
 
+
+
+
+
+
+<% if (title == "canvas") { %>
+
 <div class = "center-screen">
 
-<h1>hello</h1>
-  <body tabindex="0">
-    <!--For Easel.js-->
-    
-      <canvas id = "myCanvas", width="1000", height="1000"> </canvas>
+    <h1>hello</h1>
 
+      <% include ./partials/canvas.ejs %>
 
-  </body>
   
     </div>
+    <%} %>
+
 
 <% include ./partials/constant/footer.ejs %>

@@ -7,13 +7,13 @@ function createLine(coordinate) {
 
     let line = new createjs.Shape();
     line.graphics.setStrokeStyle(1).beginStroke("#3FBF68");
-    console.log("called " + coordinate.moveToX);
-    line.rotation = 0
+    //  console.log("called " + coordinate.moveToX);
 
     // Tell EaselJS where to go to start drawing the line
     line.graphics.moveTo((coordinate.moveToX + 500) / sizeW, (coordinate.moveToY + 500) / sizeH);
     // Tell EaselJS where to draw the line to
     line.graphics.lineTo((coordinate.lineToX + 500) / sizeW, (coordinate.lineToY + 500) / sizeH);
+
 
     line.graphics.endStroke();
 
@@ -99,5 +99,5 @@ const person = {
 }
 
 
-
 export default person
+

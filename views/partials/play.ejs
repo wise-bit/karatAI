@@ -1,19 +1,28 @@
 
-
+<style> 
+    video {
+        object-fit: cover;
+        width: 1136;
+        height: 640;
+        left: 25%;
+        position: absolute;
+        top: 47%;
+        transform: translate(-50%, -50%);
+    }
+  </style> 
 <body>
 
 <div class="ui_container">
+    
     <div class="leftcolumn">
         <a href=""><img src="/icons/lastpage.svg"  alt="play" class=""></a>
     </div>
 
 
-    <!--
-your camera logic is here
-    <% include ./camera.ejs %>
-
-    -->
-    
+    <!--<% include ./camera.ejs %> -->
+    <div class="container">
+    <video id = "vid" height = "700" width = "600" autoplay playsinline></video>
+</div>
 
     
 
@@ -91,3 +100,83 @@ your camera logic is here
    
 </footer>
 </body>
+
+
+
+<script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+      <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+      
+      <script>
+        let constraintObj = { 
+              audio: false, 
+              video: { 
+                  facingMode: "user", 
+                  width: { min: 640, ideal: 1280, max: 1920 },
+                  height: { min: 480, ideal: 720, max: 1080 }, 
+                  frameRate: { max: 10 }
+              } 
+          }; 
+        navigator.mediaDevices.getUserMedia(constraintObj)
+        .then(function(mediaStreamObj){
+          let video = document.querySelector('video');
+          if("srcObject" in video){
+            video.srcObject = mediaStreamObj;
+          }
+          else{
+            
+            video.src = window.URL.createObjectURL(mediaStreamObj)
+          }
+          video.onloadedmetadata = function(ev){
+            video.play();
+          };
+            let start = document.getElementById('btnStart');
+          
+          let stop = document.getElementById('btnStop');
+          let vidSave = document.getElementById('download');
+          let vid = document.getElementById('vid');
+          let mediaRecorder = new MediaRecorder(mediaStreamObj);
+          let chunks = [];
+           
+          let click = 0;
+          
+          
+          start.onclick = event => {
+            
+            if(event.detail === 1){
+         let temp = document.getElementById("playstop");
+          temp.style.background = "red";
+            this.disabled = true;
+            mediaRecorder.start();
+            console.log(mediaRecorder.state);
+            }
+            else{
+            let temp = document.getElementById("playstop");
+           temp.style.background = "white";
+            this.disabled = true;
+            start.disabled = false;
+                     let ok = document.getElementById("playUrl");
+                     ok.style.display = "block";
+            mediaRecorder.stop();
+            console.log(mediaRecorder.state);
+            }
+          }
+        
+            
+      
+          mediaRecorder.ondataavailable = function(ev){
+            chunks.push(ev.data);
+          }
+          mediaRecorder.onstop = (ev)=>{
+            let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+            chunks = [];
+            let videoURL = window.URL.createObjectURL(blob);
+            vidSave.style.display = "block";
+          
+            vid.remove();
+            document.getElementById("textUrl").value = videoURL;
+            window.open(videoURL);
+            console.log(videoURL);
+            vidSave.src = videoURL;
+          }
+    })
+      </script>

@@ -27,7 +27,20 @@ module.exports.displayCamera = function (req, res, next) {
 };
 module.exports.displayPlay = function (req, res, next) {
 
-    res.render("index", { title: "play" });
+    request(url, options, (error, l, person) => {
+        if (error) {
+            return console.log(error)
+        };
+
+        if (!error && l.statusCode == 200) {
+
+            // console.log(person[1]["coordinates"]);
+
+            res.render("index", { title: "play", data: JSON.stringify(person) });
+
+
+        };
+    });
 };
 module.exports.displayLoading = function (req, res, next) {
 

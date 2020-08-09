@@ -17,7 +17,7 @@ let i = 0;
 
     json = JSON.parse(document.getElementById("canvasJSON").innerText);
 
-    line = initLine(json);
+    // line = initLine(json);
     circle = initCircle(json);
 
 
@@ -29,7 +29,7 @@ let i = 0;
 
 
 
-    addLinesToStage(line);
+    // addLinesToStage(line);
     addCirclesToStage(circle);
 
 })();

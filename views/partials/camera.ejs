@@ -7,6 +7,78 @@
     </div>
     
 
+    <!--
+
+  <body style="background-color: #EA6765">
+    <div class = "fullscreen-bg">
+    <video id = "vid" height = "850" width = "1920" autoplay playsinline></video>
+    </div>
+    <br>
+    <button id = "btnStart">Record</button>
+    <button id = "btnStop" disabled = "disabled">Stop</button>
+    <br>
+    <video id = "download" controls></video>
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    
+    <script>
+      let constraintObj = { 
+            audio: false, 
+            video: { 
+                facingMode: "user", 
+                width: { min: 640, ideal: 1280, max: 1920 },
+                height: { min: 480, ideal: 720, max: 1080 }, 
+                frameRate: { max: 10 }
+            } 
+        }; 
+
+      navigator.mediaDevices.getUserMedia(constraintObj)
+      .then(function(mediaStreamObj){
+        let video = document.querySelector('video');
+        if("srcObject" in video){
+          video.srcObject = mediaStreamObj;
+        }
+        else{
+          video.src = window.URL.createObjectURL(mediaStreamObj)
+        }
+
+        video.onloadedmetadata = function(ev){
+          video.play();
+        };
+
+        let start = document.getElementById('btnStart');
+        let stop = document.getElementById('btnStop');
+        let vidSave = document.getElementById('download');
+        let mediaRecorder = new MediaRecorder(mediaStreamObj);
+        let chunks = [];
+
+        start.addEventListener('click', (ev) =>{
+          this.disabled = true;
+          stop.disabled = false;
+          mediaRecorder.start();
+          console.log(mediaRecorder.state);
+        })
+        stop.addEventListener('click', (ev) =>{
+          this.disabled = true;
+          start.disabled = false;
+          mediaRecorder.stop();
+          console.log(mediaRecorder.state);
+        });
+        mediaRecorder.ondataavailable = function(ev){
+          chunks.push(ev.data);
+        }
+        mediaRecorder.onstop = (ev)=>{
+          let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+          chunks = [];
+          let videoURL = window.URL.createObjectURL(blob);
+          vidSave.src = videoURL;
+        }
+  })
+    </script>
+  </body>
+
+    -->
+    
 
     <div class="rightcolumn web">
 
@@ -68,8 +140,11 @@
 
 <footer class="camerafooter">
     <div class="centercolumn">
+
+
+
         <a href=""><img src="/icons/back.svg"  alt="home" class="navicon"></a>
-        <a href="ready.html" class="recording"><div class="recordbutton"></div>
+        <a href="/ready" class="recording"><div class="recordbutton"></div>
              <h4>Stretching 1/15</h4>
             <h4><strong>1:30</strong> / 5:00</h4>
         </a>

@@ -1,8 +1,52 @@
 <% include ./partials/constant/header.ejs %>
 
 
+<% if (title == "home") { %>
 
 
+<% include ./partials/home.ejs %>
+
+  
+   <%} %>
+
+
+
+<% if (title == "camera") { %>
+
+
+<% include ./partials/camera.ejs %>
+
+  
+   <%} %>
+
+
+
+   <% if (title == "loading") { %>
+
+
+<% include ./partials/loading.ejs %>
+
+  
+   <%} %>
+
+
+
+   <% if (title == "ready") { %>
+
+
+<% include ./partials/ready.ejs %>
+
+  
+   <%} %>
+
+
+      <% if (title == "score") { %>
+
+
+<% include ./partials/score.ejs %>
+
+  
+   <%} %>
 
 
 <% if (title == "canvas") { %>

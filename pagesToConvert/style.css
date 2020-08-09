@@ -45,9 +45,59 @@ header {
       grid-template-columns: 25% 50% 25%;
 }
 
+.loginarea {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.loginarea h2 {
+  font-size: 16px;
+}
+
 .rightcolumn {
   -ms-grid-column: 3;
   grid-column: 3;
+}
+
+.logo {
+  margin-top: 100px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.wordlogo {
+  margin-top: 20px;
+}
+
+/************************************************************/
+input {
+  width: 90%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  /* remove underline from anchors */
+  border: 2px solid #929191;
+}
+
+input:focus {
+  border: 2px solid #EA6765;
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
 }
 
 h1 {
@@ -272,13 +322,46 @@ strong {
 .mainbutton, .secondarybutton {
   text-align: center;
   font-size: 21px;
-  font-weight: 800;
+  font-weight: 700;
   color: white;
   padding: 20px 0 20px 0;
-  border-radius: 3%;
+  border-radius: 10px;
+  margin-top: 20px;
   cursor: pointer;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+}
+
+.loginin {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 700;
+  color: white;
+  width: 100%;
+  padding: 15px 0 15px 0;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: #EA6765;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.fillin {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.loginbutton {
+  width: 150px;
+  padding: 10px 0 10px 0;
+  margin-top: 100px;
+}
+
+.signbutton {
+  width: 150px;
+  padding: 10px 0 10px 0;
 }
 
 .mainbutton {
@@ -289,7 +372,7 @@ strong {
   background-color: #212121;
 }
 
-.mainbutton:hover, .secondarybutton:hover, .bigbutton:hover {
+.mainbutton:hover, .secondarybutton:hover, .bigbutton:hover, .loginin:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: all 0.25s ease-in-out;

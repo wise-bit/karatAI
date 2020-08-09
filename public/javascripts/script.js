@@ -13,8 +13,11 @@ let stage;
 
     let line = initPerson();
 
-    createjs.Tween.get(line.one, { loop: true }).to({ x: line.one.x + 300 }, 3000).to({ x: 50 }, 3000)
-    createjs.Tween.get(line.two, { loop: true }).to({ x: line.two.x + 300 }, 3000).to({ x: 50 }, 3000)
+
+    let json = JSON.parse(document.getElementById("canvasJSON").innerText);
+
+    initTween(json)
+
 
     createjs.Ticker.addEventListener("tick", tick);
 
@@ -22,6 +25,21 @@ let stage;
     addLinesToStage(line);
 
 })();
+
+
+
+function initTween(json) {
+    createjs.Tween.get(line.one, { loop: true }).to({ x: line.one.x + 300 }, 3000).to({ x: 50 }, 3000)
+    createjs.Tween.get(line.two, { loop: true }).to({ x: line.two.x + 300 }, 3000).to({ x: 50 }, 3000)
+}
+
+
+function tick(event) {
+    stage.update();
+}
+
+
+
 
 
 function initPerson() {
@@ -46,18 +64,11 @@ function addLinesToStage(line) {
     stage.addChild(line.one, line.two, line.three, line.four, line.five, line.six, line.seven, line.eight, line.nine, line.ten, line.eleven)
     stage.update();
 
-
-
 }
 
-function tick(event) {
-    stage.update();
-}
+
 
 function handleClick(event) {
     console.log("hellooo");
     // Click happenened
 }
-
-
-

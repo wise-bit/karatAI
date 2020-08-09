@@ -6,7 +6,7 @@ import circlePoint from "./circlePoint.js";
 
 let stage, line, circle, json;
 
-
+let i = 0;
 (function () {
 
     console.log("initializing stage");
@@ -24,6 +24,8 @@ let stage, line, circle, json;
 
 
     initTween(json)
+    createjs.Ticker.addEventListener("tick", tick);
+    createjs.Ticker.setFPS(1);
 
     addLinesToStage(line);
     addCirclesToStage(circle);
@@ -35,23 +37,24 @@ let stage, line, circle, json;
 
 function initTween(json) {
 
-    let tween1 = createjs.Tween.get(line.one);
-    let tween2 = createjs.Tween.get(line.two);
-    let tween3 = createjs.Tween.get(line.three);
-    let tween4 = createjs.Tween.get(line.four);
-    let tween5 = createjs.Tween.get(line.five);
-    let tween6 = createjs.Tween.get(line.six);
-    let tween7 = createjs.Tween.get(line.seven);
-    let tween8 = createjs.Tween.get(line.eight);
-    let tween9 = createjs.Tween.get(line.nine);
-    let tween10 = createjs.Tween.get(line.ten);
-    let tween11 = createjs.Tween.get(line.eleven);
-    let tween12 = createjs.Tween.get(line.eleven);
-    let tween13 = createjs.Tween.get(line.eleven);
+    let tween1 = createjs.Tween.get(circle.one);
+    let tween2 = createjs.Tween.get(circle.two);
+    let tween3 = createjs.Tween.get(circle.three);
+    let tween4 = createjs.Tween.get(circle.four);
+    let tween5 = createjs.Tween.get(circle.five);
+    let tween6 = createjs.Tween.get(circle.six);
+    let tween7 = createjs.Tween.get(circle.seven);
+    let tween8 = createjs.Tween.get(circle.eight);
+    let tween9 = createjs.Tween.get(circle.nine);
+    let tween10 = createjs.Tween.get(circle.ten);
+    let tween11 = createjs.Tween.get(circle.eleven);
+    let tween12 = createjs.Tween.get(circle.twelve);
+    let tween13 = createjs.Tween.get(circle.thirteen);
 
     console.log(json[0]["timestamp"]);
     console.log(json[0]["coordinates"][String(1)]);
     console.log(json[0]["angles"]);
+
 
     for (let i = 0; i < json.length; i++) {
 
@@ -59,10 +62,20 @@ function initTween(json) {
 
         let coordinate = json[i]["coordinates"];
 
-        //tween1.to({ x: coordinate[String(1)]["x"], y: coordinate[String(1)]["y"] }, (i + 1) * 500)
+
+        tween1.to({ x: coordinate[String(1)]["x"], y: coordinate[String(1)]["y"] }, (i + 1) * 500)
         tween2.to({ x: coordinate[String(2)]["x"], y: coordinate[String(2)]["y"] }, (i + 1) * 500)
         tween3.to({ x: coordinate[String(3)]["x"], y: coordinate[String(3)]["y"] }, (i + 1) * 500)
         tween4.to({ x: coordinate[String(4)]["x"], y: coordinate[String(4)]["y"] }, (i + 1) * 500)
+        tween5.to({ x: coordinate[String(5)]["x"], y: coordinate[String(5)]["y"] }, (i + 1) * 500)
+        tween6.to({ x: coordinate[String(6)]["x"], y: coordinate[String(6)]["y"] }, (i + 1) * 500)
+        tween7.to({ x: coordinate[String(7)]["x"], y: coordinate[String(7)]["y"] }, (i + 1) * 500)
+        tween8.to({ x: coordinate[String(8)]["x"], y: coordinate[String(8)]["y"] }, (i + 1) * 500)
+        tween9.to({ x: coordinate[String(9)]["x"], y: coordinate[String(9)]["y"] }, (i + 1) * 500)
+        tween10.to({ x: coordinate[String(10)]["x"], y: coordinate[String(10)]["y"] }, (i + 1) * 500)
+        tween11.to({ x: coordinate[String(11)]["x"], y: coordinate[String(11)]["y"] }, (i + 1) * 500)
+        tween12.to({ x: coordinate[String(12)]["x"], y: coordinate[String(12)]["y"] }, (i + 1) * 500)
+        tween13.to({ x: coordinate[String(13)]["x"], y: coordinate[String(13)]["y"] }, (i + 1) * 500)
 
 
 
@@ -71,11 +84,8 @@ function initTween(json) {
         break;
 
 
-
-
     }
 
-    createjs.Ticker.addEventListener("tick", tick);
 
     /*
     createjs.Tween.get(line.one, { loop: true }).to({ x: line.one.x + 300 }, 3000).to({ x: 50 }, 3000)
@@ -86,6 +96,14 @@ function initTween(json) {
 
 
 function tick(event) {
+    /*
+    circle.one.x = circle.one.x + json[i]["coordinates"][String(1)]["x"];
+    circle.one.y = circle.one.x + json[i]["coordinates"][String(1)]["y"];
+    console.log(json[i]["coordinates"][String(1)]["x"]);
+
+    i++;
+    console.log(i)
+    */
     stage.update();
 }
 

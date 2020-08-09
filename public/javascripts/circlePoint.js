@@ -22,7 +22,9 @@ const circlePoint = {
 
         return createCircle({
             moveToX: coordinate[String(1)]["x"],
-            moveToY: coordinate[String(1)]["y"], lineToX: 150, lineToY: 200
+            moveToY: coordinate[String(1)]["y"],
+
+            lineToX: 150, lineToY: 200
         })
 
     },
@@ -35,7 +37,14 @@ const circlePoint = {
 
 
 
-        return createCircle({ moveToX: coordinate[String(2)]["x"], moveToY: coordinate[String(2)]["y"], lineToX: 500, lineToY: 100 })
+        return createCircle({
+            moveToX: coordinate[String(2)]["x"],
+
+            moveToY: coordinate[String(2)]["y"],
+
+
+            lineToX: 500, lineToY: 100
+        })
 
     },
 
@@ -47,7 +56,15 @@ const circlePoint = {
 
         console.log("correct: three is at" + coordinate)
 
-        return createCircle({ moveToX: 500, moveToY: 100, lineToX: 500, lineToY: 250 })
+        return createCircle({
+            moveToX: coordinate[String(3)]["x"],
+
+
+            moveToY: coordinate[String(3)]["y"],
+
+
+            lineToX: 500, lineToY: 250
+        })
 
     },
     twelve(json) {
@@ -56,7 +73,14 @@ const circlePoint = {
 
         console.log("correct: twelve is at" + coordinate)
 
-        return createCircle({ moveToX: 500, moveToY: -100, lineToX: 500, lineToY: 10 })
+        return createCircle({
+            moveToX: coordinate[String(12)]["x"],
+
+            moveToY: coordinate[String(12)]["y"],
+
+
+            lineToX: 500, lineToY: 10
+        })
 
     },
 
@@ -67,7 +91,17 @@ const circlePoint = {
         console.log("correct: four is at" + coordinate)
 
         //so far, four, five take lineTo
-        return createCircle({ moveToX: 850, moveToY: 200, lineToX: 850, lineToY: 200 })
+        return createCircle({
+            moveToX: coordinate[String(4)]["x"],
+
+
+
+
+            moveToY: coordinate[String(4)]["y"],
+
+
+            lineToX: 850, lineToY: 200
+        })
 
     },
 
@@ -78,7 +112,15 @@ const circlePoint = {
 
         console.log("correct: five is at" + coordinate)
 
-        return createCircle({ moveToX: 900, moveToY: 100, lineToX: 900, lineToY: 100 })
+        return createCircle({
+            moveToX: coordinate[String(5)]["x"],
+
+
+            moveToY: coordinate[String(5)]["y"],
+
+
+            lineToX: 900, lineToY: 100
+        })
 
     },
 
@@ -88,7 +130,17 @@ const circlePoint = {
         console.log("correct: thirteen is at" + coordinate)
 
 
-        return createCircle({ moveToX: 500, moveToY: 450, lineToX: 500, lineToY: 10 })
+        return createCircle({
+            moveToX: coordinate[String(13)]["x"],
+
+
+
+            moveToY: coordinate[String(13)]["y"],
+
+
+
+            lineToX: 500, lineToY: 10
+        })
 
     },
 
@@ -98,7 +150,17 @@ const circlePoint = {
         console.log("correct: six is at" + coordinate)
 
 
-        return createCircle({ moveToX: 350, moveToY: 450, lineToX: 500, lineToY: 450 })
+        return createCircle({
+            moveToX: coordinate[String(6)]["x"],
+
+
+
+            moveToY: coordinate[String(6)]["y"],
+
+
+
+            lineToX: 500, lineToY: 450
+        })
 
     },
 
@@ -106,7 +168,17 @@ const circlePoint = {
         let coordinate = json[0]["coordinates"];
 
         console.log("correct: seven is at" + coordinate)
-        return createCircle({ moveToX: 650, moveToY: 450, lineToX: 250, lineToY: 650 })
+        return createCircle({
+            moveToX: coordinate[String(7)]["x"],
+
+
+
+
+            moveToY: coordinate[String(7)]["y"],
+
+
+            lineToX: 250, lineToY: 650
+        })
 
     },
 
@@ -116,7 +188,16 @@ const circlePoint = {
 
         console.log("correct: eight is at" + coordinate)
 
-        return createCircle({ moveToX: 250, moveToY: 650, lineToX: 200, lineToY: 850 })
+        return createCircle({
+            moveToX: coordinate[String(8)]["x"],
+
+
+
+            moveToY: coordinate[String(8)]["y"],
+
+
+            lineToX: 200, lineToY: 850
+        })
 
     },
 
@@ -126,7 +207,16 @@ const circlePoint = {
 
         console.log("correct: nine is at" + coordinate)
 
-        return createCircle({ moveToX: 750, moveToY: 650, lineToX: 750, lineToY: 650 })
+        return createCircle({
+            moveToX: coordinate[String(9)]["x"],
+
+
+
+            moveToY: coordinate[String(9)]["y"],
+
+
+            lineToX: 750, lineToY: 650
+        })
 
     },
 
@@ -135,7 +225,14 @@ const circlePoint = {
 
         console.log("correct: eleven is at" + coordinate)
 
-        return createCircle({ moveToX: 700, moveToY: 850, lineToX: 500, lineToY: 10 })
+        return createCircle({
+            moveToX: coordinate[String(11)]["x"],
+
+            moveToY: coordinate[String(11)]["y"],
+
+
+            lineToX: 500, lineToY: 10
+        })
 
     },
 
@@ -144,7 +241,16 @@ const circlePoint = {
         let coordinate = json[0]["coordinates"];
 
         console.log("correct: ten is at" + coordinate)
-        return createCircle({ moveToX: 350, moveToY: 850, lineToX: 700, lineToY: 850 })
+        return createCircle({
+            moveToX: coordinate[String(10)]["x"],
+
+
+
+            moveToY: coordinate[String(10)]["y"],
+
+
+            lineToX: 700, lineToY: 850
+        })
 
 
     },

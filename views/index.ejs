@@ -1,6 +1,23 @@
 <% include ./partials/constant/header.ejs %>
 
 
+<% if (title == "firstPage") { %>
+
+
+<% include ./partials/firstPage.ejs %>
+
+  
+   <%} %>
+
+   <% if (title == "login") { %>
+
+
+<% include ./partials/login.ejs %>
+
+  
+   <%} %>
+
+
 <% if (title == "home") { %>
 
 

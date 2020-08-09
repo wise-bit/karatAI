@@ -4,10 +4,22 @@ let url = "https://run.mocky.io/v3/6aebabe6-b153-4708-a05b-a0779ff43a3e";
 let options = { json: true };
 
 
+module.exports.displayFirstPage = function (req, res, next) {
+
+    res.render("index", { title: "firstPage" });
+};
+
+module.exports.displayLogin = function (req, res, next) {
+
+    res.render("index", { title: "login" });
+};
+
+
 module.exports.displayIndex = function (req, res, next) {
 
     res.render("index", { title: "home" });
 };
+
 
 module.exports.displayCamera = function (req, res, next) {
 
@@ -21,6 +33,9 @@ module.exports.displayLoading = function (req, res, next) {
 
     res.render("index", { title: "loading" });
 };
+
+
+
 module.exports.displayReady = function (req, res, next) {
 
     res.render("index", { title: "ready" });

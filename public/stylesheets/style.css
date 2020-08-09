@@ -37,13 +37,16 @@ header {
   position: fixed;
 }
 
-.ui_container {
-  padding: 2%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 25% 50% 25%;
-      grid-template-columns: 25% 50% 25%;
-}
+
+
+  .ui_container {
+     padding: 2%;
+     display: -ms-grid;
+     display: grid;
+     -ms-grid-columns: 20% 50% 30%;
+         grid-template-columns: 20% 50% 30%;
+   }
+
 
 .rightcolumn {
   -ms-grid-column: 3;
@@ -263,6 +266,9 @@ strong {
   text-decoration: none;
   width: 40%;
 }
+
+
+
 
 .mainbutton, .secondarybutton {
   text-align: center;
@@ -502,6 +508,22 @@ nav {
           align-items: center;
 }
 
+.loginarea {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.loginarea h2 {
+  font-size: 16px;
+}
+
+
 .recording {
   text-decoration: none;
 }
@@ -534,6 +556,14 @@ nav {
 }
 
 @media only screen and (max-width: 1000px) {
+  .ui_container {
+     padding: 2%;
+     display: -ms-grid;
+     display: grid;
+     -ms-grid-columns: 0% 0% 0%;
+         grid-template-columns: 0% 0% 0%;
+   }
+   
   .web {
     display: none;
   }

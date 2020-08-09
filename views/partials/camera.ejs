@@ -1,7 +1,9 @@
 
 <body>
 
+  
 <div class="ui_container">
+ 
  
 
     
@@ -10,9 +12,11 @@
     <div class = "fullscreen-bg">
     <video id = "vid" height = "850" width = "1920" autoplay playsinline></video>
     
-    <video id = "download" controls style="display: none" ></video>
+    <video id = "download"  height = "850" width = "1920"  controls style="display: none" ></video>
     
     </div>
+    
+   
 
     <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
@@ -60,7 +64,8 @@
           
           if(event.detail === 1){
 
-    let temp = document.getElementById("playstop");
+       let temp = document.getElementById("playstop");
+
         temp.style.background = "red";
           this.disabled = true;
           mediaRecorder.start();
@@ -72,6 +77,11 @@
          temp.style.background = "white";
           this.disabled = true;
           start.disabled = false;
+
+                   let ok = document.getElementById("playUrl");
+                   ok.style.display = "block";
+
+
           mediaRecorder.stop();
           console.log(mediaRecorder.state);
           }
@@ -91,7 +101,9 @@
         
           vid.remove();
 
-          document.getElementById("text").innerText = videoURL;
+          document.getElementById("textUrl").value = videoURL;
+          window.open(videoURL);
+          console.log(videoURL);
 
           vidSave.src = videoURL;
         }
@@ -110,6 +122,27 @@
 
 
 
+   
+
+          
+
+
+     
+        <form action="/loading" method="get">
+            <div id ="playUrl" style="display: none; text-align: right; padding-right:50px;">
+
+                      <input id="textUrl" type="text" name ="textUrl" style="display: none;">
+
+<input type="image" src="/icons/nextpage.svg">        
+           </div>
+        
+    
+</form>
+
+
+
+
+
 
 <footer class="camerafooter2">
     <div class="centercolumn">
@@ -117,8 +150,13 @@
         <button id = "btnStart" class="recording"><div id ="playstop" class="recordbutton"></div>
         </button>
         
-    </div>  
-   
+    </div>
+
+     
 </footer>
-<h6 id="text" style="display: none;"></h6>
+
+
+
+
+
 </body>

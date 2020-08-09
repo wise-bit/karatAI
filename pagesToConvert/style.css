@@ -613,15 +613,7 @@ nav {
 }
 
 .recordbutton {
-  height: 50px;
-  width: 50px;
-  border: 3px solid #929191;
-  border-radius: 100%;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin: auto;
-  margin-bottom: 10px;
+
 }
 
 .recordbutton:active {

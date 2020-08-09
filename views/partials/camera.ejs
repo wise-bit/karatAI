@@ -4,17 +4,16 @@
 <div class="ui_container">
  
 
-    <!--
+    
 
-  <body style="background-color: #EA6765">
+  <body >
     <div class = "fullscreen-bg">
     <video id = "vid" height = "850" width = "1920" autoplay playsinline></video>
+    
+    <video id = "download" controls style="display: none" ></video>
+    
     </div>
-    <br>
-    <button id = "btnStart">Record</button>
-    <button id = "btnStop" disabled = "disabled">Stop</button>
-    <br>
-    <video id = "download" controls></video>
+
     <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     
@@ -36,6 +35,7 @@
           video.srcObject = mediaStreamObj;
         }
         else{
+          
           video.src = window.URL.createObjectURL(mediaStreamObj)
         }
 
@@ -43,24 +43,43 @@
           video.play();
         };
 
-        let start = document.getElementById('btnStart');
+
+          let start = document.getElementById('btnStart');
+        
         let stop = document.getElementById('btnStop');
         let vidSave = document.getElementById('download');
+        let vid = document.getElementById('vid');
+
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
+         
+        let click = 0;
+        
+        
+        start.onclick = event => {
+          
+          if(event.detail === 1){
 
-        start.addEventListener('click', (ev) =>{
+    let temp = document.getElementById("playstop");
+        temp.style.background = "red";
           this.disabled = true;
-          stop.disabled = false;
           mediaRecorder.start();
           console.log(mediaRecorder.state);
-        })
-        stop.addEventListener('click', (ev) =>{
+
+          }
+          else{
+          let temp = document.getElementById("playstop");
+         temp.style.background = "white";
           this.disabled = true;
           start.disabled = false;
           mediaRecorder.stop();
           console.log(mediaRecorder.state);
-        });
+          }
+
+        }
+      
+          
+    
         mediaRecorder.ondataavailable = function(ev){
           chunks.push(ev.data);
         }
@@ -68,13 +87,19 @@
           let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
           chunks = [];
           let videoURL = window.URL.createObjectURL(blob);
+          vidSave.style.display = "block";
+        
+          vid.remove();
+
+          document.getElementById("text").innerText = videoURL;
+
           vidSave.src = videoURL;
         }
   })
     </script>
   </body>
 
-    -->
+  
     
 
     
@@ -89,11 +114,11 @@
 <footer class="camerafooter2">
     <div class="centercolumn">
 
-        <a href="/ready" class="recording"><div class="recordbutton"></div>
-            <h4><strong>1:30</strong> / 5:00</h4>
-        </a>
+        <button id = "btnStart" class="recording"><div id ="playstop" class="recordbutton"></div>
+        </button>
         
     </div>  
    
 </footer>
+<h6 id="text" style="display: none;"></h6>
 </body>

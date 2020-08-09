@@ -2,12 +2,12 @@
 
 
 function createCircle(coordinate) {
-    let sizeW = 2
-    let sizeH = 2
+    let sizeW = 3
+    let sizeH = 3
 
     let circle = new createjs.Shape();
     //  console.log("called " + coordinate.moveToX);
-    circle.graphics.setStrokeStyle(1).beginStroke("#00000").beginFill("red").drawCircle((coordinate.moveToX + 500) / sizeW, (coordinate.moveToY + 500) / sizeH, 10);
+    circle.graphics.setStrokeStyle(1).beginStroke("#00000").beginFill("red").drawCircle((coordinate.moveToX - 500) / sizeW, (coordinate.moveToY - 500) / sizeH, 10);
 
     return circle;
 

@@ -23,9 +23,11 @@ let i = 0;
 
 
 
-    initTween(json)
+    //initTween(json)
     createjs.Ticker.addEventListener("tick", tick);
-    createjs.Ticker.setFPS(1);
+    createjs.Ticker.setFPS(0.5);
+
+
 
     addLinesToStage(line);
     addCirclesToStage(circle);
@@ -96,14 +98,59 @@ function initTween(json) {
 
 
 function tick(event) {
-    /*
-    circle.one.x = circle.one.x + json[i]["coordinates"][String(1)]["x"];
-    circle.one.y = circle.one.x + json[i]["coordinates"][String(1)]["y"];
+
+    circle.one.x = json[i]["coordinates"][String(1)]["x"];
+    circle.one.y = json[i]["coordinates"][String(1)]["y"];
+
+
+    circle.two.x = json[i]["coordinates"][String(2)]["x"];
+    circle.two.y = json[i]["coordinates"][String(2)]["y"];
+
+    circle.three.x = json[i]["coordinates"][String(3)]["x"];
+    circle.three.y = json[i]["coordinates"][String(3)]["y"];
+    circle.four.x = json[i]["coordinates"][String(4)]["x"];
+    circle.four.y = json[i]["coordinates"][String(4)]["y"];
+
+    circle.five.x = json[i]["coordinates"][String(5)]["x"];
+    circle.five.y = json[i]["coordinates"][String(5)]["y"];
+
+    circle.six.x = json[i]["coordinates"][String(6)]["x"];
+    circle.six.y = json[i]["coordinates"][String(6)]["y"];
+
+
+    circle.seven.x = json[i]["coordinates"][String(7)]["x"];
+    circle.seven.y = json[i]["coordinates"][String(7)]["y"];
+
+    circle.eight.x = json[i]["coordinates"][String(8)]["x"];
+    circle.eight.y = json[i]["coordinates"][String(8)]["y"];
+
+    circle.nine.x = json[i]["coordinates"][String(9)]["x"];
+    circle.nine.y = json[i]["coordinates"][String(9)]["y"];
+
+    circle.ten.x = json[i]["coordinates"][String(10)]["x"];
+    circle.ten.y = json[i]["coordinates"][String(10)]["y"];
+
+
+    circle.eleven.x = json[i]["coordinates"][String(11)]["x"];
+    circle.eleven.y = json[i]["coordinates"][String(11)]["y"];
+
+    circle.twelve.x = json[i]["coordinates"][String(12)]["x"];
+    circle.twelve.y = json[i]["coordinates"][String(12)]["y"];
+
+    circle.thirteen.x = json[i]["coordinates"][String(13)]["x"];
+    circle.thirteen.y = json[i]["coordinates"][String(13)]["y"];
+
+
+
+
+
+
+
     console.log(json[i]["coordinates"][String(1)]["x"]);
 
     i++;
     console.log(i)
-    */
+
     stage.update();
 }
 

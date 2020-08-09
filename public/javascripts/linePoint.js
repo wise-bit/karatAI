@@ -23,14 +23,14 @@ function createLine(coordinate) {
 }
 
 const linePoint = {
-    one() {
+    one(json) {
 
 
         return createLine({ moveToX: 100, moveToY: 100, lineToX: 150, lineToY: 200 })
 
     },
 
-    two() {
+    two(json) {
 
 
 
@@ -39,28 +39,28 @@ const linePoint = {
     },
 
 
-    three() {
+    three(json) {
 
 
         return createLine({ moveToX: 500, moveToY: 100, lineToX: 500, lineToY: 450 })
 
     },
 
-    twelve() {
+    twelve(json) {
 
         return createLine({ moveToX: 500, moveToY: 100, lineToX: 500, lineToY: -100 })
 
     },
 
 
-    four() {
+    four(json) {
 
         return createLine({ moveToX: 500, moveToY: 100, lineToX: 850, lineToY: 200 })
 
     },
 
 
-    five() {
+    five(json) {
 
 
         return createLine({ moveToX: 850, moveToY: 200, lineToX: 900, lineToY: 100 })
@@ -69,32 +69,32 @@ const linePoint = {
 
 
 
-    thirteen() {
+    thirteen(json) {
         return createLine({ moveToX: 350, moveToY: 450, lineToX: 650, lineToY: 450 })
 
     },
 
     //six gets lineto of thirteen and seven get movetoX
-    six() {
+    six(json) {
 
         return createLine({ moveToX: 350, moveToY: 450, lineToX: 250, lineToY: 650 })
 
     },
 
 
-    seven() {
+    seven(json) {
 
         return createLine({ moveToX: 650, moveToY: 450, lineToX: 750, lineToY: 650 })
 
     },
 
-    eight() {
+    eight(json) {
 
         return createLine({ moveToX: 250, moveToY: 650, lineToX: 350, lineToY: 850 })
     }
     ,
 
-    nine() {
+    nine(json) {
 
         return createLine({ moveToX: 750, moveToY: 650, lineToX: 700, lineToY: 850 })
 
@@ -102,15 +102,14 @@ const linePoint = {
     },
 
 
-    ten() {
-        return createLine({ moveToX: 500, moveToY: 900, lineToX: 750, lineToY: 900 })
-
+    eleven(json) {
+        return createLine({ moveToX: 700, moveToY: 850, lineToX: 700, lineToY: 850 })
 
     },
 
-    eleven() {
+    ten(json) {
 
-        return createLine({ moveToX: 300, moveToY: 900, lineToX: 900, lineToY: 900 })
+        return createLine({ moveToX: 350, moveToY: 850, lineToX: 350, lineToY: 850 })
 
     },
 

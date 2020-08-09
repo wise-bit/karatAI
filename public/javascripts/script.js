@@ -16,7 +16,6 @@ let stage, line, json;
 
 
 
-
     json = JSON.parse(document.getElementById("canvasJSON").innerText);
 
     initTween(json)
@@ -48,6 +47,7 @@ function initTween(json) {
     for (let i = 0; i < json.length; i++) {
 
 
+        /*
         let coordinate = json[i]["coordinates"];
         tween1.to({ x: line.one.x + coordinate[String(1)]["x"], y: line.one.y + coordinate[String(1)]["y"] }, (i + 1) * 500)
 
@@ -63,6 +63,7 @@ function initTween(json) {
         tween9.to({ x: line.nine.x + coordinate[String(1)]["x"] }, (i + 1) * 500)
         tween10.to({ x: line.ten.x + coordinate[String(1)]["x"] }, (i + 1) * 500)
         tween11.to({ x: line.eleven.x + coordinate[String(1)]["x"] }, (i + 1) * 500)
+        */
 
 
         break;

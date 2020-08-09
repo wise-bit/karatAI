@@ -24,6 +24,8 @@ function createLine(coordinate) {
 
 const person = {
     one() {
+        var stage = new createjs.Stage("myCanvas");
+
         return createLine({ moveToX: 100, moveToY: 100, lineToX: 150, lineToY: 200 })
 
     },

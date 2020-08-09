@@ -8,6 +8,8 @@ router.get('/', indexController.displayIndex);
 
 
 router.get('/camera', indexController.displayCamera);
+router.get('/play', indexController.displayPlay);
+
 router.get('/loading', indexController.displayLoading);
 router.get('/ready', indexController.displayReady);
 router.get('/score', indexController.displayScore);

@@ -13,6 +13,10 @@ module.exports.displayCamera = function (req, res, next) {
 
     res.render("index", { title: "camera" });
 };
+module.exports.displayPlay = function (req, res, next) {
+
+    res.render("index", { title: "play" });
+};
 module.exports.displayLoading = function (req, res, next) {
 
     res.render("index", { title: "loading" });

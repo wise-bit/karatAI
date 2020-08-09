@@ -1,0 +1,10 @@
+<svg id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="54" viewBox="0 0 55 54">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ec6565"/>
+      <stop offset="1" stop-color="#de766a"/>
+    </linearGradient>
+  </defs>
+  <ellipse id="Ellipse_4" data-name="Ellipse 4" cx="27.5" cy="27" rx="27.5" ry="27" fill="url(#linear-gradient)"/>
+  <path id="Polygon_2" data-name="Polygon 2" d="M14.134,1.5a1,1,0,0,1,1.732,0l13.269,23a1,1,0,0,1-.866,1.5H1.731a1,1,0,0,1-.866-1.5Z" transform="translate(45 12) rotate(90)" fill="#fff"/>
+</svg>

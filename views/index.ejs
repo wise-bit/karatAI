@@ -1,0 +1,90 @@
+<% include ./partials/constant/header.ejs %>
+
+
+<% if (title == "firstPage") { %>
+
+
+<% include ./partials/firstPage.ejs %>
+
+  
+   <%} %>
+
+   <% if (title == "login") { %>
+
+
+<% include ./partials/login.ejs %>
+
+  
+   <%} %>
+
+
+<% if (title == "home") { %>
+
+
+<% include ./partials/home.ejs %>
+
+  
+   <%} %>
+
+
+
+<% if (title == "camera") { %>
+
+
+<% include ./partials/camera.ejs %>
+
+  
+   <%} %>
+
+   <% if (title == "play") { %>
+
+
+<% include ./partials/play.ejs %>
+
+  
+   <%} %>
+
+
+
+   <% if (title == "loading") { %>
+
+
+<% include ./partials/loading.ejs %>
+
+  
+   <%} %>
+
+
+
+   <% if (title == "ready") { %>
+
+
+<% include ./partials/ready.ejs %>
+
+  
+   <%} %>
+
+
+      <% if (title == "score") { %>
+
+
+<% include ./partials/score.ejs %>
+
+  
+   <%} %>
+
+
+<% if (title == "canvas") { %>
+
+<div class = "center-screen">
+
+    <h1>hello</h1>
+
+      <% include ./partials/canvas.ejs %>
+
+  
+    </div>
+    <%} %>
+
+
+<% include ./partials/constant/footer.ejs %>

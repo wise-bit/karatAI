@@ -1,162 +1,156 @@
-
 <body>
 
+  <style> 
+    video {
+        left: 50%;
+        position: absolute;
+        top: 45%;
+        transform: translate(-50%, -50%);
+    }
+  </style> 
+
   
-<div class="ui_container">
- 
- 
-
-    
-
-  <body >
-    <div class = "fullscreen-bg">
-    <video id = "vid" height = "850" width = "1920" autoplay playsinline></video>
-    
-    <video id = "download"  height = "850" width = "1920"  controls style="display: none" ></video>
-    
-    </div>
-    
+  <div class="ui_container">
    
-
-    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
-    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-    
-    <script>
-      let constraintObj = { 
-            audio: false, 
-            video: { 
-                facingMode: "user", 
-                width: { min: 640, ideal: 1280, max: 1920 },
-                height: { min: 480, ideal: 720, max: 1080 }, 
-                frameRate: { max: 10 }
-            } 
-        }; 
-
-      navigator.mediaDevices.getUserMedia(constraintObj)
-      .then(function(mediaStreamObj){
-        let video = document.querySelector('video');
-        if("srcObject" in video){
-          video.srcObject = mediaStreamObj;
-        }
-        else{
-          
-          video.src = window.URL.createObjectURL(mediaStreamObj)
-        }
-
-        video.onloadedmetadata = function(ev){
-          video.play();
-        };
-
-
-          let start = document.getElementById('btnStart');
-        
-        let stop = document.getElementById('btnStop');
-        let vidSave = document.getElementById('download');
-        let vid = document.getElementById('vid');
-
-        let mediaRecorder = new MediaRecorder(mediaStreamObj);
-        let chunks = [];
-         
-        let click = 0;
-        
-        
-        start.onclick = event => {
-          
-          if(event.detail === 1){
-
-       let temp = document.getElementById("playstop");
-
-        temp.style.background = "red";
-          this.disabled = true;
-          mediaRecorder.start();
-          console.log(mediaRecorder.state);
-
+   
+  
+      
+  
+    <body >
+      <div class = "fullscreen-bg">
+      <video id = "vid" height = "850" width = "1920" autoplay playsinline></video>
+      
+      <video id = "download"  height = "850" width = "1920"  controls style="display: none" ></video>
+      
+      </div>
+      
+     
+  
+      <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+      <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+      
+      <script>
+        let constraintObj = { 
+              audio: false, 
+              video: { 
+                  facingMode: "user", 
+                  width: { min: 640, ideal: 1280, max: 1920 },
+                  height: { min: 480, ideal: 720, max: 1080 }, 
+                  frameRate: { max: 10 }
+              } 
+          }; 
+        navigator.mediaDevices.getUserMedia(constraintObj)
+        .then(function(mediaStreamObj){
+          let video = document.querySelector('video');
+          if("srcObject" in video){
+            video.srcObject = mediaStreamObj;
           }
           else{
-          let temp = document.getElementById("playstop");
-         temp.style.background = "white";
-          this.disabled = true;
-          start.disabled = false;
-
-                   let ok = document.getElementById("playUrl");
-                   ok.style.display = "block";
-
-
-          mediaRecorder.stop();
-          console.log(mediaRecorder.state);
+            
+            video.src = window.URL.createObjectURL(mediaStreamObj)
           }
-
-        }
-      
+          video.onloadedmetadata = function(ev){
+            video.play();
+          };
+            let start = document.getElementById('btnStart');
           
-    
-        mediaRecorder.ondataavailable = function(ev){
-          chunks.push(ev.data);
-        }
-        mediaRecorder.onstop = (ev)=>{
-          let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
-          chunks = [];
-          let videoURL = window.URL.createObjectURL(blob);
-          vidSave.style.display = "block";
+          let stop = document.getElementById('btnStop');
+          let vidSave = document.getElementById('download');
+          let vid = document.getElementById('vid');
+          let mediaRecorder = new MediaRecorder(mediaStreamObj);
+          let chunks = [];
+           
+          let click = 0;
+          
+          
+          start.onclick = event => {
+            
+            if(event.detail === 1){
+         let temp = document.getElementById("playstop");
+          temp.style.background = "red";
+            this.disabled = true;
+            mediaRecorder.start();
+            console.log(mediaRecorder.state);
+            }
+            else{
+            let temp = document.getElementById("playstop");
+           temp.style.background = "white";
+            this.disabled = true;
+            start.disabled = false;
+                     let ok = document.getElementById("playUrl");
+                     ok.style.display = "block";
+            mediaRecorder.stop();
+            console.log(mediaRecorder.state);
+            }
+          }
         
-          vid.remove();
-
-          document.getElementById("textUrl").value = videoURL;
-          window.open(videoURL);
-          console.log(videoURL);
-
-          vidSave.src = videoURL;
-        }
-  })
-    </script>
-  </body>
-
+            
+      
+          mediaRecorder.ondataavailable = function(ev){
+            chunks.push(ev.data);
+          }
+          mediaRecorder.onstop = (ev)=>{
+            let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+            chunks = [];
+            let videoURL = window.URL.createObjectURL(blob);
+            vidSave.style.display = "block";
+          
+            vid.remove();
+            document.getElementById("textUrl").value = videoURL;
+            window.open(videoURL);
+            console.log(videoURL);
+            vidSave.src = videoURL;
+          }
+    })
+      </script>
+    </body>
   
     
-
-    
-
-    </div>
-
-</div>
-
-
-
-   
-
+      
+  
+      
+  
+      </div>
+  
+  </div>
+  
+  
+  
+     
+  
+            
+  
+  
+       
+          <form action="/loading" method="get">
+              <div id ="playUrl" style="display: none; text-align: right; padding-right:50px;">
+  
+                        <input id="textUrl" type="text" name ="textUrl" style="display: none;">
+  
+  <input type="image" src="/icons/nextpage.svg">        
+             </div>
           
-
-
-     
-        <form action="/loading" method="get">
-            <div id ="playUrl" style="display: none; text-align: right; padding-right:50px;">
-
-                      <input id="textUrl" type="text" name ="textUrl" style="display: none;">
-
-<input type="image" src="/icons/nextpage.svg">        
-           </div>
-        
-    
-</form>
-
-
-
-
-
-
-<footer class="camerafooter2">
-    <div class="centercolumn">
-
-        <button id = "btnStart" class="recording"><div id ="playstop" class="recordbutton"></div>
-        </button>
-        
-    </div>
-
-     
-</footer>
-
-
-
-
-
-</body>
+      
+  </form>
+  
+  
+  
+  
+  
+  
+  <footer style="background-color: #EA6765" class="camerafooter2">
+      <div class="centercolumn">
+  
+          <button id = "btnStart" class="recording"><div id ="playstop" class="recordbutton"></div>
+          </button>
+          
+      </div>
+  
+       
+  </footer>
+  
+  
+  
+  
+  
+  </body>
